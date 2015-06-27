@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.piotr.piotr.vocabtrainer.DrillCreation"
+    android:id="@+id/DrillCreation"><![CDATA[
+
+    TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    ]]>
+
+    <EditText
+        android:layout_width="@dimen/edit_text_new_item"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextDrillName"
+        android:layout_marginTop="@dimen/margin_top_screen"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/drill_name"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_item"
+        android:id="@+id/textViewSelectItems"
+        android:layout_below="@+id/editTextDrillName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="15dp" />
+
+    <ScrollView
+        android:layout_width="@dimen/scroll_view_width"
+        android:layout_height="@dimen/scroll_view_heigth"
+        android:id="@+id/scrollViewCreateDrill"
+        android:longClickable="true"
+        android:minHeight="@dimen/scroll_view_heigth"
+        android:padding="3dp"
+        android:layout_below="@+id/textViewSelectItems"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:background="#6450c0ff"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:id="@+id/linearLayoutScrollDrillCreate"
+            android:transitionGroup="false"
+            android:nestedScrollingEnabled="false"
+            android:minHeight="@dimen/linear_layout_min_heigth"
+            android:background="#643c739e">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="@dimen/btn_three_in_line_width"
+        android:layout_height="@dimen/btn_heigth"
+        android:text="@string/btn_create_drill_add_items"
+        android:id="@+id/btnCreateDrillAddItems"
+        android:layout_below="@+id/scrollViewCreateDrill"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:textSize="@dimen/btn_text_size"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:layout_width="@dimen/btn_three_in_line_width"
+        android:layout_height="@dimen/btn_heigth"
+        android:text="@string/btnCreateDrillClear"
+        android:id="@+id/btnCreateDrillClear"
+        android:textSize="@dimen/btn_text_size"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/scrollViewCreateDrill"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:layout_width="@dimen/btn_three_in_line_width"
+        android:layout_height="@dimen/btn_heigth"
+        android:text="@string/btn_create_drill_save"
+        android:id="@+id/btnCreateDrillSave"
+        android:layout_alignRight="@+id/scrollViewCreateDrill"
+        android:layout_alignEnd="@+id/scrollViewCreateDrill"
+        android:textSize="@dimen/btn_text_size"
+        android:layout_below="@+id/scrollViewCreateDrill"
+        android:layout_marginTop="8dp" />
+
+    <HorizontalScrollView
+        android:layout_width="@dimen/scroll_view_width"
+        android:layout_height="24dp"
+        android:id="@+id/horizontalScrollView"
+        android:layout_below="@+id/textViewSelectItems"
+        android:layout_alignLeft="@+id/editTextDrillName"
+        android:layout_alignStart="@+id/editTextDrillName" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayoutHorizAlphabet"
+            android:baselineAligned="false"
+            android:clickable="false"></LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>

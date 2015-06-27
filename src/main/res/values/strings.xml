@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Vocab Trainer</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_item_creation">ItemCreation</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_new_item">New Item</string>
+    <string name="btn_drills_list">Drills List</string>
+    <string name="btn_create_drill">Create Drill</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_exit">Exit</string>
+    <string name="title_activity_drill_creation">DrillCreation</string>
+    <string name="text_view_enter_item">Tap here to enter your new piece of vocabulary here</string>
+    <string name="text_view_new_item_translate">Tap here to enter translations or notes for your new vocabulary</string>
+    <string name="btn_save_new_item">Save New Item</string>
+    <string name="btn_clear_create_new_item">Clear Entry</string>
+    <string name="editTextCreateNewItemTranslateHint">Tap here to enter a note or translation for your new vocabulary</string>
+    <string name="edit_text_new_item_hint">Tap here to enter your new vocabulary item</string>
+    <string name="drill_name">Tap here to enter the name of the Drill</string>
+    <string name="select_item">Select Items for the Drill</string>
+    <string name="btn_create_drill_add_items">Add</string>
+    <string name="btnCreateDrillClear">Clear</string>
+    <string name="btn_create_drill_save">Save</string>
+</resources>
