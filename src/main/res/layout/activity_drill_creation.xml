@@ -5,12 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.piotr.piotr.vocabtrainer.DrillCreation"
-    android:id="@+id/DrillCreation"><![CDATA[
-
-    TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    ]]>
+    android:id="@+id/DrillCreation">ds
 
     <EditText
         android:layout_width="@dimen/edit_text_new_item"
@@ -20,6 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:hint="@string/drill_name"
+
         android:textSize="15sp" />
 
     <TextView
@@ -31,20 +27,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="25dp"
-        android:layout_marginStart="21dp"
         android:layout_marginTop="15dp" />
 
     <ScrollView
         android:layout_width="@dimen/scroll_view_width"
-        android:layout_height="@dimen/scroll_view_heigth"
+        android:layout_height="wrap_content"
         android:id="@+id/scrollViewCreateDrill"
         android:longClickable="true"
-        android:minHeight="@dimen/scroll_view_heigth"
+        android:minHeight="50dp"
         android:padding="3dp"
         android:layout_below="@+id/textViewSelectItems"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/small_top_margin"
         android:background="#6450c0ff"
         android:fillViewport="true">
 
@@ -86,13 +81,23 @@
     <Button
         android:layout_width="@dimen/btn_three_in_line_width"
         android:layout_height="@dimen/btn_heigth"
-        android:text="@string/btn_create_drill_save"
-        android:id="@+id/btnCreateDrillSave"
+        android:text="@string/btn_create_drill_schedule"
+        android:id="@+id/btnCreateDrillSetReminder"
         android:layout_alignRight="@+id/scrollViewCreateDrill"
         android:layout_alignEnd="@+id/scrollViewCreateDrill"
         android:textSize="@dimen/btn_text_size"
         android:layout_below="@+id/scrollViewCreateDrill"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:padding="@dimen/btn_padding_zero" />
+
+    <Button
+        android:layout_width="@dimen/btn_one_centered"
+        android:layout_height="@dimen/btn_heigth"
+        android:text="@string/btn_create_drill_save"
+        android:id="@+id/createDrillSave"
+        android:textSize="@dimen/btn_text_size"
+        android:layout_below="@+id/btnCreateDrillClear"
+        android:layout_centerHorizontal="true" />
 
     <HorizontalScrollView
         android:layout_width="@dimen/scroll_view_width"
@@ -110,5 +115,7 @@
             android:baselineAligned="false"
             android:clickable="false"></LinearLayout>
     </HorizontalScrollView>
+
+
 
 </RelativeLayout>

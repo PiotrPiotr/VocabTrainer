@@ -24,6 +24,14 @@
             android:name=".DrillCreation"
             android:label="@string/title_activity_drill_creation" >
         </activity>
+        <activity
+            android:name=".SetScheduledNotification"
+            android:label="@string/title_activity_set_scheduled_notification"
+            android:parentActivityName=".DrillCreation" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.piotr.piotr.vocabtrainer.DrillCreation" />
+        </activity>
     </application>
 
 </manifest>

@@ -16,4 +16,7 @@
     <dimen name="scroll_view_heigth">300dp</dimen>
     <dimen name="linear_layout_min_heigth">100dp</dimen>
     <dimen name="btn_three_in_line_width">100dp</dimen>
+    <dimen name="small_top_margin">5dp</dimen>
+    <dimen name="btn_one_centered">175dp</dimen>
+    <dimen name="btn_padding_zero">0dp</dimen>
 </resources>

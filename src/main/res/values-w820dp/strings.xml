@@ -22,4 +22,5 @@
     <string name="select_item">Select Items for the Drill</string>
     <string name="btn_create_drill_add_items">Add</string>
     <string name="btn_create_drill_save">Save</string>
+    <string name="btn_create_drill_schedule">Schedule</string>
 </resources>
