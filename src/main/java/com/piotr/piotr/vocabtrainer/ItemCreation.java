@@ -4,6 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class ItemCreation extends ActionBarActivity {
@@ -12,7 +16,29 @@ public class ItemCreation extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_creation);
+
+        final EditText item = (EditText) findViewById(R.id.editTextCreateItem);
+        final EditText translate = (EditText) findViewById(R.id.editTextCreateItemTranslate);
+        Button add = (Button) findViewById(R.id.btnCreateNewItem);
+
+        DictDBHelper db = new DictDBHelper(ItemCreation.this);
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DictDBHelper db = new DictDBHelper(ItemCreation.this);
+                DictItem newDictItem = new DictItem();
+                newDictItem.setItem(""+item.getText());
+                newDictItem.setTranslation("" + translate.getText());
+                db.addDictItem(newDictItem);
+                Toast.makeText(ItemCreation.this,  "New item added to your dictionary",
+Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+
+
 
 
     @Override
@@ -36,4 +62,4 @@ public class ItemCreation extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+ }
