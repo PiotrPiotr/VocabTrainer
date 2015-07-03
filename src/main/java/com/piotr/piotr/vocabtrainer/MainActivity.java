@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-    public void openCreateCreateDrill(View view) {
+    public void openCreateDrill(View view) {
         Intent intent = new Intent(this, DrillCreation.class);
         startActivity(intent);
     }

@@ -36,7 +36,7 @@
         android:layout_height="@dimen/btn_heigth"
         android:text="@string/btn_create_drill"
         android:id="@+id/btnCreateDrill"
-        android:onClick="openCreateCreateDrill"
+        android:onClick="openCreateDrill"
         android:layout_marginTop="@dimen/btn_top_margin"
         android:layout_below="@+id/btnDrillsList"
         android:layout_centerHorizontal="true"
