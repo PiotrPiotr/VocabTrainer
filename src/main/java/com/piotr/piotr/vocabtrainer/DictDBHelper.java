@@ -83,7 +83,7 @@ public class DictDBHelper extends SQLiteOpenHelper {
     }
 
     //READ - getting one item from dictionary table using Cursor
-    public DictItem getDictItem(int id) {
+    public DictItem getDictItem(String item) {
         //1.reference to readable DB
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -92,7 +92,7 @@ public class DictDBHelper extends SQLiteOpenHelper {
                 db.query(TABLE_DICTIONARY, //a.table
                 COLUMNS,//b.columns names - selected all columns but may need only item column
                 "id = ?", //c. selections
-                new String[] {String.valueOf(id)}, //d.selections args
+                new String[] {String.valueOf(item)}, //d.selections args
                 null, //e.group by
                 null, //f.having
                 null, //g.order by
@@ -101,14 +101,15 @@ public class DictDBHelper extends SQLiteOpenHelper {
         if (cursor !=null)
             cursor.moveToFirst();
 
-        //4.build dictItem object
+        // 4.build dictItem object
+
         DictItem dictItem = new DictItem();
-        dictItem.setId(Integer.parseInt(cursor.getString(0)));
-        dictItem.setItem(cursor.getString(1));
-        dictItem.setTranslation(cursor.getString(2));
+        //dictItem.setId(Integer.parseInt(cursor.getString(0)));
+        dictItem.setItem(cursor.getString(0));
+        //dictItem.setTranslation(cursor.getString(2));
 
         //log - not sure if I need it
-        Log.d("getItem(" + id + ")", dictItem.toString());
+        Log.d("getItem(" + item + ")", dictItem.toString());
 
         //5.returning dictItem
         return dictItem;
@@ -119,20 +120,24 @@ public class DictDBHelper extends SQLiteOpenHelper {
         List<DictItem> dictItems = new LinkedList<DictItem>();
 
         //1.query
-        String query = "SELECT * FROM " + TABLE_DICTIONARY;
+        String query = "SELECT item FROM " + TABLE_DICTIONARY;
 
         //2.reference to writable DB
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
 
-        //3.building DictItems from each row and adding to list
+
+        /**
+         * 3.building DictItems from each row and adding to list, no need for id and translate variables as only item
+         * as only item is displayed in DrillCreation listView
+         */
         DictItem dictItem = null;
         if (cursor.moveToFirst()) {
             do{
                 dictItem = new DictItem();
-                dictItem.setId(Integer.parseInt(cursor.getString(0)));
-                dictItem.setItem(cursor.getString(1));
-                dictItem.setTranslation(cursor.getString(2));
+                //dictItem.setId(Integer.parseInt(cursor.getString(0)));
+                dictItem.setItem(cursor.getString(0));
+                //dictItem.setTranslation(cursor.getString(1));
 
                 //add dictItem to dictItems
                 dictItems.add(dictItem);

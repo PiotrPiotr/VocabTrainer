@@ -10,6 +10,10 @@ public class DictItem {
     private String item;
     private String translation;
 
+    /**
+     * in the below constructor only the item variable probably needed as for the
+     * list in CreateDrill only item is displayed
+     */
     public DictItem(){}
 
     public DictItem(String item, String translation){
@@ -42,10 +46,10 @@ public class DictItem {
         this.translation = translation;
     }
 
-    //not sure I need it
+    //returning only the item column for the DrillCration customised listView
 
     @Override
     public String toString(){
-        return "DictItem [id=" +id+ ", item=" +item+ ", translation= " +translation+ "]";
+        return item; //original item  returned with all columns: "DictItem [id=" +id+ ", item=" +item+ ", translation= " +translation+ "]";
     }
 }
